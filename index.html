@@ -76,25 +76,38 @@
       <a href="#contacto" class="hover:text-white">Tienda</a>
     </div>
   </header>
-
-  <!-- SECCIÓN HERO / INICIO -->
+<!-- SECCIÓN HERO / INICIO CON BANNER OFICIAL -->
   <section id="inicio" class="bg-black text-white relative overflow-hidden border-b border-zinc-800">
-    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-300 mb-6">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Stock sincronizado en vivo con tienda física
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-          Tu celular, siempre <span class="text-zinc-400 underline decoration-white/30">protegido</span> y <span class="text-zinc-400 underline decoration-white/30">cargado.</span>
-        </h1>
-        <p class="text-zinc-400 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
-          Tecnología, protección y carga rápida de alto rendimiento en Santa Cruz. Compra online con verificación de stock en tiempo real y recibe hoy mismo o retira en nuestra tienda.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#catalogo" class="bg-white text-black hover:bg-zinc-200 px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition">
-            Explorar Catálogo
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 text-center">
+      <!-- Banner Oficial de Canva -->
+      <div class="mb-8 flex justify-center">
+        <img
+          src="./Banner%20web%20de%20FARATECH.png"
+          alt="Banner Oficial Faratech - Accesorios para Celulares"
+          class="w-full max-w-4xl rounded-2xl border border-zinc-800 shadow-2xl object-contain"
+        />
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-300 mb-5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Stock sincronizado en vivo con tienda física en Santa Cruz
+      </div>
+
+      <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+        Tecnología, protección y carga rápida de alto rendimiento. Compra online con verificación de stock en tiempo real y recibe hoy mismo o retira en nuestro local.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#catalogo" class="bg-white text-black hover:bg-zinc-200 px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition">
+          Explorar Catálogo
+        </a>
+        <a href="#catalogo" onclick="filterCategory('Promociones')" class="border border-zinc-700 hover:border-white text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition">
+          Ver Promociones
+        </a>
+      </div>
+    </div>
+  </section>
+              Explorar Catálogo
           </a>
           <a href="#catalogo" onclick="filterCategory('Promociones')" class="border border-zinc-700 hover:border-white text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition">
             Ver Promociones
