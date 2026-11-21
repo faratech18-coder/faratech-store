@@ -18,15 +18,12 @@
 </head>
 <body class="antialiased selection:bg-black selection:text-white">
 
-  <!-- BARRA SUPERIOR DE ANUNCIO -->
   <div class="bg-zinc-900 text-zinc-200 text-xs py-2 px-4 text-center tracking-wider uppercase border-b border-zinc-800">
     Envíos a todo Santa Cruz y Bolivia • Recojo gratis en tienda física • Pagos con QR Banco Ganadero
   </div>
 
-  <!-- NAVBAR PRINCIPAL -->
   <header class="sticky top-0 z-40 glass-nav text-white border-b border-zinc-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Logo Faratech -->
       <a href="#inicio" class="flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-full bg-black border-2 border-white flex items-center justify-center group-hover:scale-105 transition-transform">
           <svg class="w-7 h-7 text-white" viewBox="0 0 64 64" fill="none">
@@ -42,7 +39,6 @@
         </div>
       </a>
 
-      <!-- Navegación Desktop -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-300">
         <a href="#inicio" class="hover:text-white transition">Inicio</a>
         <a href="#catalogo" onclick="filterCategory('Todos')" class="hover:text-white transition">Catálogo</a>
@@ -53,7 +49,6 @@
         <a href="#contacto" class="hover:text-white transition">Contacto</a>
       </nav>
 
-      <!-- Botón Carrito -->
       <div class="flex items-center gap-3">
         <button onclick="toggleCart()" class="relative bg-white text-black hover:bg-zinc-200 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 transition shadow-sm">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -65,7 +60,6 @@
       </div>
     </div>
 
-    <!-- Menú Móvil Rápido -->
     <div class="md:hidden flex justify-around py-2.5 border-t border-zinc-800 text-xs text-zinc-300 bg-black">
       <a href="#inicio" class="hover:text-white">Inicio</a>
       <a href="#catalogo" onclick="filterCategory('Todos')" class="hover:text-white">Productos</a>
@@ -75,10 +69,8 @@
     </div>
   </header>
 
-  <!-- SECCIÓN HERO / INICIO CON BANNER OFICIAL -->
   <section id="inicio" class="bg-black text-white relative overflow-hidden border-b border-zinc-800">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-14 text-center">
-      <!-- Banner Oficial de Canva -->
       <div class="mb-8 flex justify-center">
         <img
           src="./Banner%20web%20de%20FARATECH.png"
@@ -107,7 +99,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN CATÁLOGO Y BUSCADOR -->
   <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
       <div>
@@ -115,7 +106,6 @@
         <h2 class="text-3xl font-extrabold tracking-tight mt-1">Catálogo de Accesorios</h2>
       </div>
 
-      <!-- Buscador Inteligente -->
       <div class="relative w-full md:w-96">
         <input
           type="text"
@@ -130,7 +120,6 @@
       </div>
     </div>
 
-    <!-- Filtros por Categoría -->
     <div id="category-filters" class="flex flex-wrap gap-2 mb-10">
       <button onclick="filterCategory('Todos')" data-cat="Todos" class="cat-btn bg-black text-white px-5 py-2 rounded-full text-xs font-semibold transition">Todos</button>
       <button onclick="filterCategory('Cargadores y Cables')" data-cat="Cargadores y Cables" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">Cargadores y Cables</button>
@@ -140,17 +129,14 @@
       <button onclick="filterCategory('Promociones')" data-cat="Promociones" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">★ Promociones</button>
     </div>
 
-    <!-- Estado de Carga -->
     <div id="loading-state" class="text-center py-20">
       <div class="w-10 h-10 border-4 border-zinc-200 border-t-black rounded-full animate-spin mx-auto mb-4"></div>
       <p class="text-sm text-zinc-500 font-medium">Sincronizando inventario desde Google Cloud...</p>
     </div>
 
-    <!-- Grilla de Productos -->
     <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 hidden"></div>
   </section>
 
-  <!-- SECCIÓN RASTREO DE PEDIDO -->
   <section id="rastreo" class="bg-zinc-950 text-white py-16 border-y border-zinc-800">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Seguimiento en la Nube</span>
@@ -174,7 +160,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN CONTACTO Y TIENDA FÍSICA -->
   <section id="contacto" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -211,7 +196,6 @@
         </div>
       </div>
 
-      <!-- Mapa Embebido Santa Cruz -->
       <div class="rounded-3xl overflow-hidden border border-zinc-200 shadow-sm h-80 bg-zinc-100">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60785.39414502059!2d-63.2185737!3d-17.7833274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e81ca7c01a63%3A0x5c8b0a53a467611b!2sSanta%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1700000000000"
@@ -221,7 +205,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="bg-black text-zinc-400 py-10 border-t border-zinc-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-2 text-white font-bold tracking-widest">
@@ -233,14 +216,12 @@
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
   <a href="https://wa.me/59169639237?text=Hola%20Faratech,%20quisiera%20más%20información" target="_blank"
      class="fixed bottom-6 right-6 z-30 bg-black text-white border border-zinc-700 hover:bg-zinc-800 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 text-xs font-bold transition">
     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
     WhatsApp Faratech
   </a>
 
-  <!-- DRAWER LATERAL: CARRITO Y CHECKOUT -->
   <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden"></div>
   <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="p-6 bg-black text-white flex items-center justify-between">
@@ -318,7 +299,6 @@
     </div>
   </aside>
 
-  <!-- MODAL DE CONFIRMACIÓN Y PAGO QR BANCO GANADERO -->
   <div id="success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl relative">
       <div class="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
@@ -348,7 +328,6 @@
     </div>
   </div>
 
-  <!-- LÓGICA JAVASCRIPT CONECTADA A GOOGLE APPS SCRIPT -->
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyYVWgqkjDkGQQNp8rpBxExK04_vFKOzq0psDLuVYpqBI0QAn-_jBeBXSlzv2uTv6A1/exec";
     const WHATSAPP_NUMBER = "59169639237";
@@ -422,4 +401,263 @@
                 <img src="${p.imagen}" alt="${p.producto}" class="w-full h-full object-cover ${outOfStock ? 'grayscale opacity-50' : ''}">
                 <span class="absolute top-3 left-3 bg-black/85 text-white text-[10px] font-mono px-2.5 py-1 rounded-full">${p.codigo}</span>
                 ${p.promocion ? `<span class="absolute top-3 right-3 bg-white text-black border border-black text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Oferta</span>` : ''}
-                ${outOfStock ? `<div class="absolute inset-0 bg-black/50 flex items-center justify-center"><span class="bg-black text-white font-bold text-xs px-4 py-1.
+                ${outOfStock ? `<div class="absolute inset-0 bg-black/50 flex items-center justify-center"><span class="bg-black text-white font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">Agotado</span></div>` : ''}
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">${p.categoria}</span>
+                <h3 class="font-bold text-base text-zinc-900 mt-1 leading-snug">${p.producto}</h3>
+                <p class="text-xs text-zinc-500 mt-1.5 line-clamp-2">${p.descripcion}</p>
+                <div class="mt-3 pt-3 border-t border-zinc-100">
+                  <p class="text-[11px] text-zinc-600"><strong class="text-black">Compatible:</strong> ${p.compatibilidad}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-2 flex items-center justify-between">
+              <div>
+                <span class="block text-xl font-extrabold text-black">Bs. ${p.precio}</span>
+                <span class="text-[11px] font-medium ${outOfStock ? 'text-red-600' : lowStock ? 'text-amber-600' : 'text-emerald-600'}">
+                  ${outOfStock ? 'Sin stock' : lowStock ? `¡Últimas ${p.stock} unid.!` : `Stock: ${p.stock} unid.`}
+                </span>
+              </div>
+              <button
+                onclick="addToCart('${p.codigo}')"
+                ${outOfStock ? 'disabled' : ''}
+                class="px-4 py-2.5 rounded-full text-xs font-bold transition ${outOfStock ? 'bg-zinc-200 text-zinc-400 cursor-not-allowed' : 'bg-black text-white hover:bg-zinc-800'}">
+                ${outOfStock ? 'Agotado' : '+ Agregar'}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById("cart-drawer");
+      const overlay = document.getElementById("cart-overlay");
+      const isClosed = drawer.classList.contains("translate-x-full");
+      if (isClosed) {
+        drawer.classList.remove("translate-x-full");
+        overlay.classList.remove("hidden");
+      } else {
+        drawer.classList.add("translate-x-full");
+        overlay.classList.add("hidden");
+      }
+    }
+
+    function addToCart(codigo) {
+      const prod = allProducts.find(p => p.codigo === codigo);
+      if (!prod || prod.stock <= 0) return;
+
+      const existing = cart.find(item => item.codigo === codigo);
+      if (existing) {
+        if (existing.cantidad >= prod.stock) {
+          alert(`Solo tenemos ${prod.stock} unidades disponibles de este producto.`);
+          return;
+        }
+        existing.cantidad++;
+      } else {
+        cart.push({
+          codigo: prod.codigo,
+          producto: prod.producto,
+          precio: prod.precio,
+          maxStock: prod.stock,
+          cantidad: 1
+        });
+      }
+      updateCartUI();
+      toggleCart();
+    }
+
+    function changeQty(codigo, delta) {
+      const item = cart.find(i => i.codigo === codigo);
+      if (!item) return;
+      item.cantidad += delta;
+      if (item.cantidad <= 0) {
+        cart = cart.filter(i => i.codigo !== codigo);
+      } else if (item.cantidad > item.maxStock) {
+        item.cantidad = item.maxStock;
+        alert(`Stock máximo disponible: ${item.maxStock}`);
+      }
+      updateCartUI();
+    }
+
+    function getShippingCost() {
+      const mode = document.getElementById("cust-delivery")?.value || "";
+      if (mode.includes("4to Anillo")) return 15;
+      if (mode.includes("8vo Anillo")) return 20;
+      if (mode.includes("Nacional")) return 25;
+      return 0;
+    }
+
+    function updateCartUI() {
+      const countBadge = document.getElementById("cart-count");
+      const container = document.getElementById("cart-items-container");
+      const form = document.getElementById("checkout-form");
+
+      const totalUnits = cart.reduce((acc, i) => acc + i.cantidad, 0);
+      countBadge.textContent = totalUnits;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-zinc-400">
+            <p class="text-sm font-medium">Tu carrito está vacío</p>
+            <p class="text-xs mt-1">Agrega accesorios desde el catálogo para empezar.</p>
+          </div>
+        `;
+        form.classList.add("hidden");
+        return;
+      }
+
+      form.classList.remove("hidden");
+      container.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between bg-zinc-50 p-3.5 rounded-2xl border border-zinc-200">
+          <div class="pr-2">
+            <span class="text-[10px] font-mono text-zinc-400">${item.codigo}</span>
+            <h5 class="text-xs font-bold text-black leading-tight">${item.producto}</h5>
+            <span class="text-xs font-semibold text-zinc-600">Bs. ${item.precio * item.cantidad}</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white border border-zinc-200 rounded-full px-2 py-1">
+            <button onclick="changeQty('${item.codigo}', -1)" class="w-6 h-6 text-xs font-bold hover:bg-zinc-100 rounded-full">-</button>
+            <span class="text-xs font-bold w-4 text-center">${item.cantidad}</span>
+            <button onclick="changeQty('${item.codigo}', 1)" class="w-6 h-6 text-xs font-bold hover:bg-zinc-100 rounded-full">+</button>
+          </div>
+        </div>
+      `).join("");
+
+      const subtotal = cart.reduce((acc, i) => acc + (i.precio * i.cantidad), 0);
+      const shipping = getShippingCost();
+      const total = subtotal + shipping;
+
+      document.getElementById("cart-subtotal").textContent = `Bs. ${subtotal}`;
+      document.getElementById("cart-shipping").textContent = `Bs. ${shipping}`;
+      document.getElementById("cart-total").textContent = `Bs. ${total}`;
+    }
+
+    async function submitOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) return;
+
+      const btn = document.getElementById("submit-order-btn");
+      btn.disabled = true;
+      btn.textContent = "Procesando pedido en la nube...";
+
+      const subtotal = cart.reduce((acc, i) => acc + (i.precio * i.cantidad), 0);
+      const shipping = getShippingCost();
+      const total = subtotal + shipping;
+
+      const payload = {
+        cliente: document.getElementById("cust-name").value.trim(),
+        telefono: document.getElementById("cust-phone").value.trim(),
+        modalidad: document.getElementById("cust-delivery").value,
+        direccion: document.getElementById("cust-address").value.trim(),
+        formaPago: document.getElementById("cust-payment").value,
+        observaciones: document.getElementById("cust-notes").value.trim(),
+        items: cart
+      };
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (data.status === "success") {
+          toggleCart();
+          showSuccessModal(data.orderId, total, payload);
+          cart = [];
+          updateCartUI();
+          document.getElementById("checkout-form").reset();
+        } else {
+          alert("Atención: " + data.message);
+        }
+      } catch (err) {
+        alert("Hubo un error de conexión al registrar tu pedido. Intenta nuevamente.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Confirmar Pedido";
+      }
+    }
+
+    function showSuccessModal(orderId, total, payload) {
+      document.getElementById("modal-order-id").textContent = orderId;
+      document.getElementById("modal-total-amount").textContent = `Total a Pagar: Bs. ${total}`;
+
+      const qrText = encodeURIComponent(`FARATECH | Banco Ganadero | Orden: ${orderId} | Monto: Bs. ${total} | Cliente: ${payload.cliente}`);
+      document.getElementById("modal-qr-img").src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrText}`;
+
+      const itemsText = payload.items.map(i => `• ${i.cantidad}x ${i.producto} (${i.codigo})`).join("\n");
+      const waMessage = encodeURIComponent(
+        `¡Hola *FARATECH*! 👋 Acabo de realizar un pedido en la tienda web:\n\n` +
+        `*Código de Orden:* ${orderId}\n` +
+        `*Cliente:* ${payload.cliente}\n` +
+        `*Entrega:* ${payload.modalidad} (${payload.direccion})\n` +
+        `*Forma de Pago:* ${payload.formaPago}\n\n` +
+        `*Detalle:*\n${itemsText}\n\n` +
+        `*Total:* Bs. ${total}\n` +
+        `_(Adjunto mi comprobante / quedo atento)_`
+      );
+      document.getElementById("modal-wa-btn").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
+
+      document.getElementById("success-modal").classList.remove("hidden");
+    }
+
+    function closeSuccessModal() {
+      document.getElementById("success-modal").classList.add("hidden");
+      loadProducts();
+    }
+
+    async function trackOrder(e) {
+      e.preventDefault();
+      const id = document.getElementById("track-input").value.trim();
+      const resultBox = document.getElementById("track-result");
+      const btn = document.getElementById("track-btn");
+
+      btn.textContent = "Buscando...";
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(`${API_URL}?action=trackOrder&id=${encodeURIComponent(id)}`);
+        const data = await res.json();
+
+        resultBox.classList.remove("hidden");
+        if (data.status === "success") {
+          const o = data.order;
+          const badgeColor =
+            o.estado === "Pagado" ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40" :
+            o.estado === "Cancelado" ? "bg-red-500/20 text-red-300 border-red-500/40" :
+            "bg-amber-500/20 text-amber-300 border-amber-500/40";
+
+          resultBox.innerHTML = `
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-3">
+              <div>
+                <span class="text-xs text-zinc-400 block">Orden</span>
+                <span class="font-mono font-bold text-lg text-white">${o.id}</span>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold border ${badgeColor}">${o.estado.toUpperCase()}</span>
+            </div>
+            <p class="text-xs text-zinc-300 mb-1"><strong>Cliente:</strong> ${o.cliente}</p>
+            <p class="text-xs text-zinc-300 mb-1"><strong>Entrega:</strong> ${o.modalidad}</p>
+            <p class="text-xs text-zinc-300 mb-3"><strong>Pago:</strong> ${o.formaPago}</p>
+            <div class="bg-black/50 p-3 rounded-xl text-xs text-zinc-300">
+              <strong class="block text-white mb-1">Productos:</strong>
+              ${data.items.map(i => `<div>• ${i.cantidad}x ${i.producto}</div>`).join("")}
+            </div>
+          `;
+        } else {
+          resultBox.innerHTML = `<p class="text-sm text-zinc-400 text-center">${data.message}</p>`;
+        }
+      } catch (err) {
+        resultBox.classList.remove("hidden");
+        resultBox.innerHTML = `<p class="text-sm text-red-400 text-center">Error al consultar el pedido.</p>`;
+      } finally {
+        btn.textContent = "Consultar Estado";
+        btn.disabled = false;
+      }
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>
