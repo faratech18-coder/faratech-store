@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FARATECH | Accesorios para Celulares</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #0a0a0a; }
+    .glass-nav { background: rgba(0, 0, 0, 0.94); backdrop-filter: blur(10px); }
+    .product-card { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); }
+    /* Scrollbar minimalista */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f4f4f5; }
+    ::-webkit-scrollbar-thumb { background: #18181b; border-radius: 3px; }
+  </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white">
+
+  <!-- BARRA SUPERIOR DE ANUNCIO -->
+  <div class="bg-zinc-900 text-zinc-200 text-xs py-2 px-4 text-center tracking-wider uppercase border-b border-zinc-800">
+    Envíos a todo Santa Cruz y Bolivia • Recojo gratis en tienda física • Pagos con QR Banco Ganadero
+  </div>
+
+  <!-- NAVBAR PRINCIPAL -->
+  <header class="sticky top-0 z-40 glass-nav text-white border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo Faratech -->
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full bg-black border-2 border-white flex items-center justify-center group-hover:scale-105 transition-transform">
+          <!-- Isotipo Capacitor Faratech -->
+          <svg class="w-7 h-7 text-white" viewBox="0 0 64 64" fill="none">
+            <line x1="8" y1="32" x2="26" y2="32" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+            <line x1="26" y1="16" x2="26" y2="48" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+            <line x1="38" y1="16" x2="38" y2="48" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+            <line x1="38" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-extrabold text-xl tracking-[0.22em] block leading-none">FARATECH</span>
+          <span class="text-[10px] text-zinc-400 tracking-[0.18em] uppercase block mt-1">Accesorios para Celulares</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-300">
+        <a href="#inicio" class="hover:text-white transition">Inicio</a>
+        <a href="#catalogo" onclick="filterCategory('Todos')" class="hover:text-white transition">Catálogo</a>
+        <a href="#catalogo" onclick="filterCategory('Promociones')" class="hover:text-white transition flex items-center gap-1.5">
+          Promociones <span class="bg-white text-black text-[10px] font-bold px-1.5 py-0.5 rounded">HOT</span>
+        </a>
+        <a href="#rastreo" class="hover:text-white transition">Rastrear Pedido</a>
+        <a href="#contacto" class="hover:text-white transition">Contacto</a>
+      </nav>
+
+      <!-- Botón Carrito -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleCart()" class="relative bg-white text-black hover:bg-zinc-200 px-4 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 transition shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="hidden sm:inline">Carrito</span>
+          <span id="cart-count" class="bg-black text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Móvil Rápido -->
+    <div class="md:hidden flex justify-around py-2.5 border-t border-zinc-800 text-xs text-zinc-300 bg-black">
+      <a href="#inicio" class="hover:text-white">Inicio</a>
+      <a href="#catalogo" onclick="filterCategory('Todos')" class="hover:text-white">Productos</a>
+      <a href="#catalogo" onclick="filterCategory('Promociones')" class="hover:text-white font-semibold text-white">Ofertas</a>
+      <a href="#rastreo" class="hover:text-white">Rastrear</a>
+      <a href="#contacto" class="hover:text-white">Tienda</a>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO / INICIO -->
+  <section id="inicio" class="bg-black text-white relative overflow-hidden border-b border-zinc-800">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-300 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Stock sincronizado en vivo con tienda física
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          Tu celular, siempre <span class="text-zinc-400 underline decoration-white/30">protegido</span> y <span class="text-zinc-400 underline decoration-white/30">cargado.</span>
+        </h1>
+        <p class="text-zinc-400 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
+          Tecnología, protección y carga rápida de alto rendimiento en Santa Cruz. Compra online con verificación de stock en tiempo real y recibe hoy mismo o retira en nuestra tienda.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#catalogo" class="bg-white text-black hover:bg-zinc-200 px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition">
+            Explorar Catálogo
+          </a>
+          <a href="#catalogo" onclick="filterCategory('Promociones')" class="border border-zinc-700 hover:border-white text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition">
+            Ver Promociones
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta Visual Minimalista Hero -->
+      <div class="flex justify-center">
+        <div class="bg-zinc-950 border border-zinc-800 p-8 sm:p-10 rounded-3xl max-w-md w-full text-center shadow-2xl relative">
+          <div class="w-28 h-28 mx-auto rounded-full border-4 border-white flex items-center justify-center mb-6 bg-black">
+            <svg class="w-16 h-16 text-white" viewBox="0 0 64 64" fill="none">
+              <line x1="6" y1="32" x2="25" y2="32" stroke="currentColor" stroke-width="4"/>
+              <line x1="25" y1="14" x2="25" y2="50" stroke="currentColor" stroke-width="5.5"/>
+              <line x1="39" y1="14" x2="39" y2="50" stroke="currentColor" stroke-width="5.5"/>
+              <line x1="39" y1="32" x2="58" y2="32" stroke="currentColor" stroke-width="4"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-extrabold tracking-[0.28em] text-white mb-2">FARATECH</h2>
+          <p class="text-xs text-zinc-400 tracking-[0.2em] uppercase mb-6">Accesorios para Celulares</p>
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-zinc-800 text-xs">
+            <div>
+              <span class="block font-bold text-white text-base">100%</span>
+              <span class="text-zinc-500">Garantía</span>
+            </div>
+            <div>
+              <span class="block font-bold text-white text-base">QR</span>
+              <span class="text-zinc-500">B. Ganadero</span>
+            </div>
+            <div>
+              <span class="block font-bold text-white text-base">24/7</span>
+              <span class="text-zinc-500">Pedidos Web</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CATÁLOGO Y BUSCADOR -->
+  <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Inventario en Tiempo Real</span>
+        <h2 class="text-3xl font-extrabold tracking-tight mt-1">Catálogo de Accesorios</h2>
+      </div>
+
+      <!-- Buscador Inteligente -->
+      <div class="relative w-full md:w-96">
+        <input
+          type="text"
+          id="search-input"
+          oninput="renderProducts()"
+          placeholder="Buscar cargador, iPhone 15, funda, FT-001..."
+          class="w-full pl-11 pr-4 py-3 bg-zinc-100 border border-zinc-200 rounded-full text-sm focus:outline-none focus:border-black focus:bg-white transition"
+        />
+        <svg class="w-4 h-4 text-zinc-500 absolute left-4 top-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Filtros por Categoría -->
+    <div id="category-filters" class="flex flex-wrap gap-2 mb-10">
+      <button onclick="filterCategory('Todos')" data-cat="Todos" class="cat-btn bg-black text-white px-5 py-2 rounded-full text-xs font-semibold transition">Todos</button>
+      <button onclick="filterCategory('Cargadores y Cables')" data-cat="Cargadores y Cables" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">Cargadores y Cables</button>
+      <button onclick="filterCategory('Fundas y Protectores')" data-cat="Fundas y Protectores" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">Fundas y Protectores</button>
+      <button onclick="filterCategory('Audio')" data-cat="Audio" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">Audio</button>
+      <button onclick="filterCategory('Soportes y Gadgets')" data-cat="Soportes y Gadgets" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">Soportes y Gadgets</button>
+      <button onclick="filterCategory('Promociones')" data-cat="Promociones" class="cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition">★ Promociones</button>
+    </div>
+
+    <!-- Estado de Carga -->
+    <div id="loading-state" class="text-center py-20">
+      <div class="w-10 h-10 border-4 border-zinc-200 border-t-black rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-sm text-zinc-500 font-medium">Sincronizando inventario desde Google Cloud...</p>
+    </div>
+
+    <!-- Grilla de Productos -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 hidden"></div>
+  </section>
+
+  <!-- SECCIÓN RASTREO DE PEDIDO -->
+  <section id="rastreo" class="bg-zinc-950 text-white py-16 border-y border-zinc-800">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Seguimiento en la Nube</span>
+      <h2 class="text-3xl font-extrabold mt-2 mb-3">Rastrea tu Pedido</h2>
+      <p class="text-zinc-400 text-sm mb-8">Ingresa el código de orden generado al finalizar tu compra (ejemplo: <span class="text-white font-mono">FT-4821</span>) para verificar su estado en tiempo real.</p>
+
+      <form onsubmit="trackOrder(event)" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input
+          type="text"
+          id="track-input"
+          required
+          placeholder="Ej: FT-1234"
+          class="flex-1 px-5 py-3.5 rounded-full bg-zinc-900 border border-zinc-700 text-white text-sm uppercase font-mono focus:outline-none focus:border-white"
+        />
+        <button type="submit" id="track-btn" class="bg-white text-black hover:bg-zinc-200 px-7 py-3.5 rounded-full font-bold text-sm transition">
+          Consultar Estado
+        </button>
+      </form>
+
+      <div id="track-result" class="mt-8 hidden text-left bg-zinc-900 border border-zinc-800 rounded-2xl p-6 max-w-lg mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONTACTO Y TIENDA FÍSICA -->
+  <section id="contacto" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Visítanos o Escríbenos</span>
+        <h2 class="text-3xl font-extrabold tracking-tight mt-1 mb-4">Tienda Física Faratech</h2>
+        <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+          ¿Prefieres ver el accesorio en persona o recoger tu pedido web sin costo de envío? Te esperamos en nuestro punto de atención en Santa Cruz de la Sierra.
+        </p>
+
+        <div class="space-y-4 text-sm">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 font-bold">📍</div>
+            <div>
+              <p class="font-bold">Ubicación</p>
+              <p class="text-zinc-600">Santa Cruz de la Sierra, Bolivia (Zona Centro / Comercial)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 font-bold">🕒</div>
+            <div>
+              <p class="font-bold">Horarios de Atención</p>
+              <p class="text-zinc-600">Lunes a Sábado: 09:00 a 20:00 hrs</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center shrink-0 font-bold">💬</div>
+            <div>
+              <p class="font-bold">WhatsApp Directo y Comprobantes QR</p>
+              <a href="https://wa.me/59169639237?text=Hola%20Faratech,%20tengo%20una%20consulta%20sobre%20un%20accesorio" target="_blank" class="text-black underline font-semibold hover:text-zinc-600">
+                +591 69639237 (Clic para chatear)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa Embebido Santa Cruz -->
+      <div class="rounded-3xl overflow-hidden border border-zinc-200 shadow-sm h-80 bg-zinc-100">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60785.39414502059!2d-63.2185737!3d-17.7833274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e81ca7c01a63%3A0x5c8b0a53a467611b!2sSanta%20Cruz%20de%20la%20Sierra!5e0!3m2!1ses!2sbo!4v1700000000000"
+          width="100%" height="100%" style="border:0; filter: grayscale(100%) contrast(1.1);" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-zinc-400 py-10 border-t border-zinc-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2 text-white font-bold tracking-widest">
+        <span>FARATECH</span>
+        <span class="text-zinc-600">|</span>
+        <span class="text-zinc-400 font-normal">Tu celular, siempre protegido y cargado</span>
+      </div>
+      <p>Arquitectura Serverless Cloud • Proyecto Ingeniería de Sistemas</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/59169639237?text=Hola%20Faratech,%20quisiera%20más%20información" target="_blank"
+     class="fixed bottom-6 right-6 z-30 bg-black text-white border border-zinc-700 hover:bg-zinc-800 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 text-xs font-bold transition">
+    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+    WhatsApp Faratech
+  </a>
+
+  <!-- DRAWER LATERAL: CARRITO Y CHECKOUT -->
+  <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Cabecera Carrito -->
+    <div class="p-6 bg-black text-white flex items-center justify-between">
+      <div>
+        <h3 class="font-extrabold text-lg tracking-wide">Tu Carrito</h3>
+        <p class="text-xs text-zinc-400">Finaliza tu pedido en segundos</p>
+      </div>
+      <button onclick="toggleCart()" class="p-2 hover:bg-zinc-800 rounded-full text-zinc-300 hover:text-white">✕</button>
+    </div>
+
+    <!-- Contenido Dinámico del Carrito -->
+    <div id="cart-body" class="flex-1 overflow-y-auto p-6 space-y-6">
+      <!-- Lista de ítems -->
+      <div id="cart-items-container" class="space-y-4"></div>
+
+      <!-- Formulario de Pedido (Fase 4) -->
+      <form id="checkout-form" onsubmit="submitOrder(event)" class="space-y-4 pt-4 border-t border-zinc-200 hidden">
+        <h4 class="font-bold text-sm uppercase tracking-wider text-zinc-900">Datos para el Pedido</h4>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-700 mb-1">Nombre Completo *</label>
+          <input type="text" id="cust-name" required placeholder="Ej: Carlos Mendoza" class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:border-black">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-700 mb-1">Teléfono / WhatsApp *</label>
+          <input type="tel" id="cust-phone" required placeholder="Ej: 71234567" class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:border-black">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-700 mb-1">Modalidad de Entrega *</label>
+          <select id="cust-delivery" onchange="updateCartUI()" class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-xl text-sm bg-white focus:outline-none focus:border-black">
+            <option value="Recojo en Tienda Física">Recojo en Tienda Física (Gratis - Bs. 0)</option>
+            <option value="Delivery Santa Cruz (4to Anillo)">Delivery Santa Cruz - Hasta 4to Anillo (+ Bs. 15)</option>
+            <option value="Delivery Santa Cruz (5to a 8vo Anillo)">Delivery Santa Cruz - 5to a 8vo Anillo (+ Bs. 20)</option>
+            <option value="Envío Nacional (Flota/Courier)">Envío Nacional a otro departamento (+ Bs. 25)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-700 mb-1">Ciudad y Dirección Exacta *</label>
+          <input type="text" id="cust-address" required placeholder="Ej: Santa Cruz, Av. Banzer 3er anillo..." class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:border-black">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-700 mb-1">Forma de Pago *</label>
+          <select id="cust-payment" class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-xl text-sm bg-white focus:outline-none focus:border-black">
+            <option value="QR Simple (Banco Ganadero)">QR Simple (Banco Ganadero)</option>
+            <option value="Transferencia Banco Ganadero">Transferencia Bancaria (Banco Ganadero)</option>
+            <option value="Pago Contra Entrega / En Tienda">Pago en Efectivo al Recibir / En Tienda</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-700 mb-1">Observaciones (Modelo de celular, color, etc.)</label>
+          <textarea id="cust-notes" rows="2" placeholder="Ej: La funda es para un iPhone 15 Pro..." class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:border-black"></textarea>
+        </div>
+
+        <!-- Totales -->
+        <div class="bg-zinc-100 p-4 rounded-2xl space-y-1.5 text-sm">
+          <div class="flex justify-between text-zinc-600">
+            <span>Subtotal Productos:</span>
+            <span id="cart-subtotal">Bs. 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-600">
+            <span>Costo de Envío:</span>
+            <span id="cart-shipping">Bs. 0</span>
+          </div>
+          <div class="flex justify-between font-extrabold text-base text-black pt-2 border-t border-zinc-200">
+            <span>Total a Pagar:</span>
+            <span id="cart-total">Bs. 0</span>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-order-btn" class="w-full bg-black text-white hover:bg-zinc-800 py-3.5 rounded-full font-bold text-sm tracking-wide transition shadow-lg">
+          Confirmar Pedido
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- MODAL DE CONFIRMACIÓN Y PAGO QR BANCO GANADERO -->
+  <div id="success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl relative">
+      <div class="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
+      <h3 class="text-2xl font-extrabold text-black">¡Pedido Registrado!</h3>
+      <p class="text-xs text-zinc-500 mt-1">Guarda tu código de seguimiento:</p>
+
+      <div id="modal-order-id" class="my-3 py-2 px-4 bg-zinc-100 border border-zinc-300 rounded-xl font-mono font-extrabold text-xl tracking-widest text-black">
+        FT-0000
+      </div>
+
+      <!-- Bloque Pago QR Banco Ganadero -->
+      <div id="modal-qr-box" class="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 my-4 text-xs">
+        <p class="font-bold text-black uppercase tracking-wider mb-1">Pago QR / Transferencia - Banco Ganadero</p>
+        <p class="text-zinc-600 mb-3">Escanea el QR desde tu app bancaria o envía el comprobante por WhatsApp para validar tu pedido.</p>
+        <!-- QR generado dinámicamente con el código de orden y monto -->
+        <img id="modal-qr-img" src="" alt="QR Banco Ganadero Faratech" class="w-40 h-40 mx-auto border-4 border-white shadow-md rounded-xl mb-2">
+        <p class="font-bold text-sm text-black" id="modal-total-amount">Monto: Bs. 0</p>
+        <p class="text-[11px] text-zinc-500 mt-0.5">Banco Ganadero • Titular: Faratech Accesorios</p>
+      </div>
+
+      <div class="space-y-2.5 mt-4">
+        <a id="modal-wa-btn" href="#" target="_blank" class="block w-full bg-black text-white hover:bg-zinc-800 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition">
+          Enviar Comprobante / Resumen por WhatsApp
+        </a>
+        <button onclick="closeSuccessModal()" class="block w-full bg-zinc-100 text-zinc-700 hover:bg-zinc-200 py-2.5 rounded-full font-semibold text-xs transition">
+          Seguir Explorando la Tienda
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LÓGICA JAVASCRIPT CONECTADA A GOOGLE APPS SCRIPT -->
+  <script>
+    // URL DE TU API SERVERLESS EN GOOGLE APPS SCRIPT
+    const API_URL = "https://script.google.com/macros/s/AKfycbyYVWgqkjDkGQQNp8rpBxExK04_vFKOzq0psDLuVYpqBI0QAn-_jBeBXSlzv2uTv6A1/exec";
+    const WHATSAPP_NUMBER = "59169639237";
+
+    let allProducts = [];
+    let currentCategory = "Todos";
+    let cart = [];
+
+    // 1. Cargar productos desde Google Sheets al iniciar
+    async function loadProducts() {
+      try {
+        const res = await fetch(`${API_URL}?action=getProducts`);
+        const data = await res.json();
+        if (data.status === "success") {
+          allProducts = data.products;
+          document.getElementById("loading-state").classList.add("hidden");
+          document.getElementById("products-grid").classList.remove("hidden");
+          renderProducts();
+        }
+      } catch (err) {
+        document.getElementById("loading-state").innerHTML = `
+          <p class="text-red-600 font-semibold text-sm">Error al conectar con la nube. Verifica tu conexión e intenta recargar.</p>
+        `;
+      }
+    }
+
+    // 2. Filtrar por categoría
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll(".cat-btn").forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = "cat-btn bg-black text-white px-5 py-2 rounded-full text-xs font-semibold transition";
+        } else {
+          btn.className = "cat-btn bg-zinc-100 text-zinc-700 hover:bg-zinc-200 px-5 py-2 rounded-full text-xs font-semibold transition";
+        }
+      });
+      renderProducts();
+    }
+
+    // 3. Renderizar tarjetas de productos
+    function renderProducts() {
+      const grid = document.getElementById("products-grid");
+      const query = document.getElementById("search-input").value.toLowerCase().trim();
+
+      const filtered = allProducts.filter(p => {
+        const matchCat =
+          currentCategory === "Todos" ||
+          (currentCategory === "Promociones" && (p.promocion || p.categoria === "Promociones")) ||
+          p.categoria === currentCategory;
+
+        const matchSearch =
+          !query ||
+          p.producto.toLowerCase().includes(query) ||
+          p.codigo.toLowerCase().includes(query) ||
+          p.compatibilidad.toLowerCase().includes(query) ||
+          p.descripcion.toLowerCase().includes(query);
+
+        return matchCat && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full text-center py-12 text-zinc-500 text-sm">No encontramos accesorios que coincidan con tu búsqueda.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const outOfStock = p.stock <= 0;
+        const lowStock = p.stock > 0 && p.stock <= 5;
+
+        return `
+          <div class="product-card bg-white border border-zinc-200 rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative h-52 bg-zinc-100 overflow-hidden">
+                <img src="${p.imagen}" alt="${p.producto}" class="w-full h-full object-cover ${outOfStock ? 'grayscale opacity-50' : ''}">
+                <span class="absolute top-3 left-3 bg-black/85 text-white text-[10px] font-mono px-2.5 py-1 rounded-full">${p.codigo}</span>
+                ${p.promocion ? `<span class="absolute top-3 right-3 bg-white text-black border border-black text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Oferta</span>` : ''}
+                ${outOfStock ? `<div class="absolute inset-0 bg-black/50 flex items-center justify-center"><span class="bg-black text-white font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">Agotado</span></div>` : ''}
+              </div>
+              <div class="p-5">
+                <span class="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider">${p.categoria}</span>
+                <h3 class="font-bold text-base text-zinc-900 mt-1 leading-snug">${p.producto}</h3>
+                <p class="text-xs text-zinc-500 mt-1.5 line-clamp-2">${p.descripcion}</p>
+                <div class="mt-3 pt-3 border-t border-zinc-100">
+                  <p class="text-[11px] text-zinc-600"><strong class="text-black">Compatible:</strong> ${p.compatibilidad}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-2 flex items-center justify-between">
+              <div>
+                <span class="block text-xl font-extrabold text-black">Bs. ${p.precio}</span>
+                <span class="text-[11px] font-medium ${outOfStock ? 'text-red-600' : lowStock ? 'text-amber-600' : 'text-emerald-600'}">
+                  ${outOfStock ? 'Sin stock' : lowStock ? `¡Últimas ${p.stock} unid.!` : `Stock: ${p.stock} unid.`}
+                </span>
+              </div>
+              <button
+                onclick="addToCart('${p.codigo}')"
+                ${outOfStock ? 'disabled' : ''}
+                class="px-4 py-2.5 rounded-full text-xs font-bold transition ${outOfStock ? 'bg-zinc-200 text-zinc-400 cursor-not-allowed' : 'bg-black text-white hover:bg-zinc-800'}">
+                ${outOfStock ? 'Agotado' : '+ Agregar'}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // 4. Gestión del Carrito
+    function toggleCart() {
+      const drawer = document.getElementById("cart-drawer");
+      const overlay = document.getElementById("cart-overlay");
+      const isClosed = drawer.classList.contains("translate-x-full");
+      if (isClosed) {
+        drawer.classList.remove("translate-x-full");
+        overlay.classList.remove("hidden");
+      } else {
+        drawer.classList.add("translate-x-full");
+        overlay.classList.add("hidden");
+      }
+    }
+
+    function addToCart(codigo) {
+      const prod = allProducts.find(p => p.codigo === codigo);
+      if (!prod || prod.stock <= 0) return;
+
+      const existing = cart.find(item => item.codigo === codigo);
+      if (existing) {
+        if (existing.cantidad >= prod.stock) {
+          alert(`Solo tenemos ${prod.stock} unidades disponibles de este producto.`);
+          return;
+        }
+        existing.cantidad++;
+      } else {
+        cart.push({
+          codigo: prod.codigo,
+          producto: prod.producto,
+          precio: prod.precio,
+          maxStock: prod.stock,
+          cantidad: 1
+        });
+      }
+      updateCartUI();
+      toggleCart();
+    }
+
+    function changeQty(codigo, delta) {
+      const item = cart.find(i => i.codigo === codigo);
+      if (!item) return;
+      item.cantidad += delta;
+      if (item.cantidad <= 0) {
+        cart = cart.filter(i => i.codigo !== codigo);
+      } else if (item.cantidad > item.maxStock) {
+        item.cantidad = item.maxStock;
+        alert(`Stock máximo disponible: ${item.maxStock}`);
+      }
+      updateCartUI();
+    }
+
+    function getShippingCost() {
+      const mode = document.getElementById("cust-delivery")?.value || "";
+      if (mode.includes("4to Anillo")) return 15;
+      if (mode.includes("8vo Anillo")) return 20;
+      if (mode.includes("Nacional")) return 25;
+      return 0;
+    }
+
+    function updateCartUI() {
+      const countBadge = document.getElementById("cart-count");
+      const container = document.getElementById("cart-items-container");
+      const form = document.getElementById("checkout-form");
+
+      const totalUnits = cart.reduce((acc, i) => acc + i.cantidad, 0);
+      countBadge.textContent = totalUnits;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-zinc-400">
+            <p class="text-sm font-medium">Tu carrito está vacío</p>
+            <p class="text-xs mt-1">Agrega accesorios desde el catálogo para empezar.</p>
+          </div>
+        `;
+        form.classList.add("hidden");
+        return;
+      }
+
+      form.classList.remove("hidden");
+      container.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between bg-zinc-50 p-3.5 rounded-2xl border border-zinc-200">
+          <div class="pr-2">
+            <span class="text-[10px] font-mono text-zinc-400">${item.codigo}</span>
+            <h5 class="text-xs font-bold text-black leading-tight">${item.producto}</h5>
+            <span class="text-xs font-semibold text-zinc-600">Bs. ${item.precio * item.cantidad}</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white border border-zinc-200 rounded-full px-2 py-1">
+            <button onclick="changeQty('${item.codigo}', -1)" class="w-6 h-6 text-xs font-bold hover:bg-zinc-100 rounded-full">-</button>
+            <span class="text-xs font-bold w-4 text-center">${item.cantidad}</span>
+            <button onclick="changeQty('${item.codigo}', 1)" class="w-6 h-6 text-xs font-bold hover:bg-zinc-100 rounded-full">+</button>
+          </div>
+        </div>
+      `).join("");
+
+      const subtotal = cart.reduce((acc, i) => acc + (i.precio * i.cantidad), 0);
+      const shipping = getShippingCost();
+      const total = subtotal + shipping;
+
+      document.getElementById("cart-subtotal").textContent = `Bs. ${subtotal}`;
+      document.getElementById("cart-shipping").textContent = `Bs. ${shipping}`;
+      document.getElementById("cart-total").textContent = `Bs. ${total}`;
+    }
+
+    // 5. Enviar Pedido al Backend (Google Sheets)
+    async function submitOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) return;
+
+      const btn = document.getElementById("submit-order-btn");
+      btn.disabled = true;
+      btn.textContent = "Procesando pedido en la nube...";
+
+      const subtotal = cart.reduce((acc, i) => acc + (i.precio * i.cantidad), 0);
+      const shipping = getShippingCost();
+      const total = subtotal + shipping;
+
+      const payload = {
+        cliente: document.getElementById("cust-name").value.trim(),
+        telefono: document.getElementById("cust-phone").value.trim(),
+        modalidad: document.getElementById("cust-delivery").value,
+        direccion: document.getElementById("cust-address").value.trim(),
+        formaPago: document.getElementById("cust-payment").value,
+        observaciones: document.getElementById("cust-notes").value.trim(),
+        items: cart
+      };
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (data.status === "success") {
+          toggleCart();
+          showSuccessModal(data.orderId, total, payload);
+          cart = [];
+          updateCartUI();
+          document.getElementById("checkout-form").reset();
+        } else {
+          alert("Atención: " + data.message);
+        }
+      } catch (err) {
+        alert("Hubo un error de conexión al registrar tu pedido. Intenta nuevamente.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Confirmar Pedido";
+      }
+    }
+
+    // 6. Mostrar Comprobante y QR Banco Ganadero
+    function showSuccessModal(orderId, total, payload) {
+      document.getElementById("modal-order-id").textContent = orderId;
+      document.getElementById("modal-total-amount").textContent = `Total a Pagar: Bs. ${total}`;
+
+      // Generar QR dinámico con los datos de pago Banco Ganadero + Orden
+      const qrText = encodeURIComponent(`FARATECH | Banco Ganadero | Orden: ${orderId} | Monto: Bs. ${total} | Cliente: ${payload.cliente}`);
+      document.getElementById("modal-qr-img").src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrText}`;
+
+      // Armar mensaje directo para WhatsApp
+      const itemsText = payload.items.map(i => `• ${i.cantidad}x ${i.producto} (${i.codigo})`).join("\n");
+      const waMessage = encodeURIComponent(
+        `¡Hola *FARATECH*! 👋 Acabo de realizar un pedido en la tienda web:\n\n` +
+        `*Código de Orden:* ${orderId}\n` +
+        `*Cliente:* ${payload.cliente}\n` +
+        `*Entrega:* ${payload.modalidad} (${payload.direccion})\n` +
+        `*Forma de Pago:* ${payload.formaPago}\n\n` +
+        `*Detalle:*\n${itemsText}\n\n` +
+        `*Total:* Bs. ${total}\n` +
+        `_(Adjunto mi comprobante / quedo atento)_`
+      );
+      document.getElementById("modal-wa-btn").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
+
+      document.getElementById("success-modal").classList.remove("hidden");
+    }
+
+    function closeSuccessModal() {
+      document.getElementById("success-modal").classList.add("hidden");
+      loadProducts(); // Refrescar stock
+    }
+
+    // 7. Rastrear Pedido
+    async function trackOrder(e) {
+      e.preventDefault();
+      const id = document.getElementById("track-input").value.trim();
+      const resultBox = document.getElementById("track-result");
+      const btn = document.getElementById("track-btn");
+
+      btn.textContent = "Buscando...";
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(`${API_URL}?action=trackOrder&id=${encodeURIComponent(id)}`);
+        const data = await res.json();
+
+        resultBox.classList.remove("hidden");
+        if (data.status === "success") {
+          const o = data.order;
+          const badgeColor =
+            o.estado === "Pagado" ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40" :
+            o.estado === "Cancelado" ? "bg-red-500/20 text-red-300 border-red-500/40" :
+            "bg-amber-500/20 text-amber-300 border-amber-500/40";
+
+          resultBox.innerHTML = `
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-3">
+              <div>
+                <span class="text-xs text-zinc-400 block">Orden</span>
+                <span class="font-mono font-bold text-lg text-white">${o.id}</span>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-bold border ${badgeColor}">${o.estado.toUpperCase()}</span>
+            </div>
+            <p class="text-xs text-zinc-300 mb-1"><strong>Cliente:</strong> ${o.cliente}</p>
+            <p class="text-xs text-zinc-300 mb-1"><strong>Entrega:</strong> ${o.modalidad}</p>
+            <p class="text-xs text-zinc-300 mb-3"><strong>Pago:</strong> ${o.formaPago}</p>
+            <div class="bg-black/50 p-3 rounded-xl text-xs text-zinc-300">
+              <strong class="block text-white mb-1">Productos:</strong>
+              ${data.items.map(i => `<div>• ${i.cantidad}x ${i.producto}</div>`).join("")}
+            </div>
+          `;
+        } else {
+          resultBox.innerHTML = `<p class="text-sm text-zinc-400 text-center">${data.message}</p>`;
+        }
+      } catch (err) {
+        resultBox.classList.remove("hidden");
+        resultBox.innerHTML = `<p class="text-sm text-red-400 text-center">Error al consultar el pedido.</p>`;
+      } finally {
+        btn.textContent = "Consultar Estado";
+        btn.disabled = false;
+      }
+    }
+
+    // Inicializar tienda
+    loadProducts();
+  </script>
+</body>
+</html>
