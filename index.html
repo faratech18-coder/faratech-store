@@ -18,10 +18,12 @@
 </head>
 <body class="antialiased selection:bg-black selection:text-white">
 
+  <!-- BARRA SUPERIOR DE ANUNCIO -->
   <div class="bg-zinc-900 text-zinc-200 text-xs py-2 px-4 text-center tracking-wider uppercase border-b border-zinc-800">
     Envíos a todo Santa Cruz y Bolivia • Recojo gratis en tienda física • Pagos con QR Banco Ganadero
   </div>
 
+  <!-- NAVBAR PRINCIPAL -->
   <header class="sticky top-0 z-40 glass-nav text-white border-b border-zinc-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <a href="#inicio" class="flex items-center gap-3 group">
@@ -69,36 +71,63 @@
     </div>
   </header>
 
+  <!-- SECCIÓN HERO / INICIO ORIGINAL -->
   <section id="inicio" class="bg-black text-white relative overflow-hidden border-b border-zinc-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-14 text-center">
-      <div class="mb-8 flex justify-center">
-        <img
-          src="./Banner%20web%20de%20FARATECH.png"
-          alt="Banner Oficial Faratech - Accesorios para Celulares"
-          class="w-full max-w-4xl rounded-2xl border border-zinc-800 shadow-2xl object-contain"
-        />
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-300 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Stock sincronizado en vivo con tienda física
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          Tu celular, siempre <span class="text-zinc-400 underline decoration-white/30">protegido</span> y <span class="text-zinc-400 underline decoration-white/30">cargado.</span>
+        </h1>
+        <p class="text-zinc-400 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
+          Tecnología, protección y carga rápida de alto rendimiento en Santa Cruz. Compra online con verificación de stock en tiempo real y recibe hoy mismo o retira en nuestra tienda.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#catalogo" class="bg-white text-black hover:bg-zinc-200 px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition">
+            Explorar Catálogo
+          </a>
+          <a href="#catalogo" onclick="filterCategory('Promociones')" class="border border-zinc-700 hover:border-white text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition">
+            Ver Promociones
+          </a>
+        </div>
       </div>
 
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-700 bg-zinc-900/80 text-xs text-zinc-300 mb-5">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Stock sincronizado en vivo con tienda física en Santa Cruz
-      </div>
-
-      <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-        Tecnología, protección y carga rápida de alto rendimiento. Compra online con verificación de stock en tiempo real y recibe hoy mismo o retira en nuestro local.
-      </p>
-
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#catalogo" class="bg-white text-black hover:bg-zinc-200 px-7 py-3.5 rounded-full font-bold text-sm tracking-wide transition">
-          Explorar Catálogo
-        </a>
-        <a href="#catalogo" onclick="filterCategory('Promociones')" class="border border-zinc-700 hover:border-white text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition">
-          Ver Promociones
-        </a>
+      <div class="flex justify-center">
+        <div class="bg-zinc-950 border border-zinc-800 p-8 sm:p-10 rounded-3xl max-w-md w-full text-center shadow-2xl relative">
+          <div class="w-28 h-28 mx-auto rounded-full border-4 border-white flex items-center justify-center mb-6 bg-black">
+            <svg class="w-16 h-16 text-white" viewBox="0 0 64 64" fill="none">
+              <line x1="6" y1="32" x2="25" y2="32" stroke="currentColor" stroke-width="4"/>
+              <line x1="25" y1="14" x2="25" y2="50" stroke="currentColor" stroke-width="5.5"/>
+              <line x1="39" y1="14" x2="39" y2="50" stroke="currentColor" stroke-width="5.5"/>
+              <line x1="39" y1="32" x2="58" y2="32" stroke="currentColor" stroke-width="4"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-extrabold tracking-[0.28em] text-white mb-2">FARATECH</h2>
+          <p class="text-xs text-zinc-400 tracking-[0.2em] uppercase mb-6">Accesorios para Celulares</p>
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-zinc-800 text-xs">
+            <div>
+              <span class="block font-bold text-white text-base">100%</span>
+              <span class="text-zinc-500">Garantía</span>
+            </div>
+            <div>
+              <span class="block font-bold text-white text-base">QR</span>
+              <span class="text-zinc-500">B. Ganadero</span>
+            </div>
+            <div>
+              <span class="block font-bold text-white text-base">24/7</span>
+              <span class="text-zinc-500">Pedidos Web</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- SECCIÓN CATÁLOGO Y BUSCADOR -->
   <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
       <div>
@@ -137,6 +166,7 @@
     <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 hidden"></div>
   </section>
 
+  <!-- SECCIÓN RASTREO DE PEDIDO -->
   <section id="rastreo" class="bg-zinc-950 text-white py-16 border-y border-zinc-800">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Seguimiento en la Nube</span>
@@ -160,6 +190,7 @@
     </div>
   </section>
 
+  <!-- SECCIÓN CONTACTO Y TIENDA FÍSICA -->
   <section id="contacto" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -205,6 +236,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="bg-black text-zinc-400 py-10 border-t border-zinc-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-2 text-white font-bold tracking-widest">
@@ -216,12 +248,14 @@
     </div>
   </footer>
 
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
   <a href="https://wa.me/59169639237?text=Hola%20Faratech,%20quisiera%20más%20información" target="_blank"
      class="fixed bottom-6 right-6 z-30 bg-black text-white border border-zinc-700 hover:bg-zinc-800 px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 text-xs font-bold transition">
     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
     WhatsApp Faratech
   </a>
 
+  <!-- DRAWER LATERAL: CARRITO Y CHECKOUT -->
   <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden"></div>
   <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
     <div class="p-6 bg-black text-white flex items-center justify-between">
@@ -299,6 +333,7 @@
     </div>
   </aside>
 
+  <!-- MODAL DE CONFIRMACIÓN Y PAGO QR BANCO GANADERO -->
   <div id="success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl relative">
       <div class="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
@@ -328,6 +363,7 @@
     </div>
   </div>
 
+  <!-- LÓGICA JAVASCRIPT CONECTADA A GOOGLE APPS SCRIPT -->
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbyYVWgqkjDkGQQNp8rpBxExK04_vFKOzq0psDLuVYpqBI0QAn-_jBeBXSlzv2uTv6A1/exec";
     const WHATSAPP_NUMBER = "59169639237";
